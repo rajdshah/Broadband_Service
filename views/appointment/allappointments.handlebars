@@ -1,0 +1,49 @@
+<div class="container">
+		<div id="interior">
+ 		<ul>
+ 			<li><a href="/">HOME</a></li>
+            
+             {{!-- Don't think we need this link if we are already on that page --}}
+             <li><a href="/broadband/broadbandPlans">PLANS</a></li>
+             {{!-- <li><a href="/broadband/newPlan">ADD NEW BROADBAND PLAN</a></li> --}}
+             {{#if userName}}
+             
+			{{#if isAdmin}}
+            <li><a href="/allappointments">CHECK USER REQUESTS</a></li>
+			{{else}}
+			<li><a href="/checkout/yourorders">YOUR ORDER</a></li>
+			{{/if}}
+		    {{/if}}
+		
+ 		</ul>	
+ 		</div>
+ 		<div id="interior2"> 
+        {{!-- {{#if userName}}
+            <h2 class="userType">{{userName}}</h2>
+        {{else}}
+        <h2 class="userType" hidden>guest</h2> --}}
+ 		<ul>	
+        {{#if userName}}      
+		    <li><a href="/users/profile">PROFILE</a></li>
+		    <li><a href="/users/logout">LOGOUT</a></li>
+        {{else}}
+            <li><a href="/users/signup">REGISTER</a></li>
+		    <li><a href="/users/login">LOGIN</a></li>
+        {{/if}}
+ 		</ul>
+         {{!-- {{/if}}	 --}}
+ 		</div>
+</div>
+<h1>Appointment Request</h1>
+{{#if AppointmentRequest}}
+    <ol>
+    {{#each AppointmentRequest}}
+        <li>Username: {{this.userName}}<br>
+            EmailId:{{this.email}}     
+            Date: {{this.date}}<br>
+            Querises: {{this.queries}}<br>
+            RequestType: {{this.requestType}}<br>
+        </li>
+    {{/each}}
+    </ol>
+{{/if}}

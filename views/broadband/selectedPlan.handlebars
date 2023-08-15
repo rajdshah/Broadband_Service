@@ -1,0 +1,92 @@
+<div class="container">
+		<div id="interior">
+ 		<ul>
+ 			<li><a href="/">HOME</a></li>
+            <li><a href="/broadband/broadbandPlans">PLANS</a></li> 
+            {{#if userName}}
+			{{#if isAdmin}}
+			{{else}}
+			<li><a href="/users/referafriend">REFER A FRIEND</a></li>
+            <li><a href="/appointment">CREATE APPOINTMENT</a></li>
+			<li><a href="/checkout/yourorders">YOUR ORDER</a></li>           
+            <li><a href="/broadband/contactus">CONTACT US</a></li>
+
+			{{/if}}
+		    {{/if}}
+ 		</ul>	
+ 		</div>
+ 		<div id="interior2">
+        <ul> 
+        {{#if userName}}      
+		<li><a href="/users/profile">PROFILE</a></li>
+			<li><a href="/users/logout">LOGOUT</a></li>
+         {{else}}
+            <li><a href="/users/signup">REGISTER</a></li>
+			<li><a href="/users/login">LOGIN</a></li>
+        {{/if}}	
+        </ul>
+ 		</div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<h2>selected Plan</h2>
+<form id="myForm" method="POST">
+<div class="row">
+  <div class="col-75">
+    <div class="container-form">
+      <div id="error" hidden></div>
+      
+
+          <label for="planName">Plan Name </label><input type="text" id="planName" name="planName" value="{{planName}}" readonly>
+          <label for="price">Price </label><input type="text" id="price" name="price" value="{{price}}" readonly>
+          <label for="validity">Validity </label><input type="text" id="validity" name="validity" value="{{validity}}" readonly>
+          <label for="limit">Limit </label><input type="text" id="limit" name="limit" value="{{limit}}" readonly>
+          <label for="discount">Discount </label><input type="text" id="discount" name="discount" value="{{discount}}" readonly>
+
+<div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+           
+         
+           <p> Please select type of the card </p>
+          <select name="cars" id="cars">
+            <option value="Credit Card">Credit Card</option>
+            <option value="Debit Card">Debit card</option>
+            </select>
+         <br>
+         <br>
+         <br>
+
+            <input type="text" id="username" name="Username" placeholder="Username" value={{userName}} readonly>
+            <input type="text" id="cname" name="cardname" placeholder="Name on Card">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="Card Number">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="Month">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="Year">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV">
+              </div>
+            </div>
+          </div>
+          <input type="submit" value="Continue to checkout" class="btn">
+        </div>
+        
+        <input name= '_method' value="PUT" type='hidden'>
+      
+    </div>
+</form>
+
+<a href='/broadband/broadbandPlans'>Go Back</a>
+
+
+<script src="/public/js/checkoutScript.js"></script>

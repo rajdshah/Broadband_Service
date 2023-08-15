@@ -1,0 +1,57 @@
+<div class="container">
+		<div id="interior">
+ 		<ul>
+ 			<li><a href="/">HOME</a></li>
+            <li><a href="/broadband/broadbandPlans">PLANS</a></li> 
+            {{#if userName}}
+			{{#if isAdmin}}
+			{{else}}
+			<li><a href="/users/referafriend">REFER A FRIEND</a></li>
+            <li><a href="/appointment">CREATE APPOINTMENT</a></li>
+			<li><a href="/checkout/yourorders">YOUR ORDER</a></li>           
+            <li><a href="/broadband/contactus">CONTACT US</a></li>
+
+			{{/if}}
+		    {{/if}}
+ 		</ul>	
+ 		</div>
+ 		<div id="interior2">
+        <ul> 
+        {{#if userName}}      
+		<li><a href="/users/profile">PROFILE</a></li>
+			<li><a href="/users/logout">LOGOUT</a></li>
+         {{else}}
+            <li><a href="/users/signup">REGISTER</a></li>
+			<li><a href="/users/login">LOGIN</a></li>
+        {{/if}}	
+        </ul>
+ 		</div>
+</div>
+<h1>Payment has been approved</h1>
+
+<br><br>
+<h2> Tax Bill/Invoice</h2>
+
+<table>
+<tr>
+<th colspan="4">Order Id: {{orderId}} </th>
+<th colspan="5">Ordered Date: {{billDate}}</th>
+</tr>
+<tr>
+<th colspan="2">Plan Id: {{planSelectedId}}</th>
+<th colspan="2">Plan name: {{name}}</th>
+<th colspan="2">Price: {{price}}$</th>
+<th colspan="3">Validity: {{validity}}</th>
+</tr>
+<tr>
+<th>First Name : {{firstName}}</th>
+<th>Last Name : {{lastName}}</th>
+<th>Email : {{email}}</th>
+<th>DateOfBirth : {{dateOfBirth}}</th>
+<th>PhoneNo : {{phoneNo}}</th>
+<th>Address : {{address}}</th>
+<th>City : {{city}}</th>
+<th>State : {{state}}</th>
+<th>ZipCode : {{zipcode}}</th>
+</tr>
+</table>

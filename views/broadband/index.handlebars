@@ -1,0 +1,87 @@
+<div class="container">
+		<div id="interior">
+ 		<ul>
+ 			<li><a href="/">HOME</a></li>
+			 <li><a href="/broadband/broadbandPlans">PLANS</a></li>
+            {{#if userName}} 
+				
+                {{!-- <li><a href="users/logout">LOGOUT</a></li> --}}
+				{{#if isAdmin}}
+				{{!-- <li><a href="/broadband/newPlan">ADD NEW BROADBAND PLAN</a></li> --}}
+    			{{!-- <li><a>Update BroadBand service</a></li>
+    			<li><a>Delete Broadband service</a></li> --}}
+    			<li><a href="/allappointments">CHECK USER REQUESTS</a></li>
+				{{else}}
+		        {{!-- <li><a href="users/profile">PROFILE</a></li> --}}
+				<li><a href="/users/referafriend">REFER A FRIEND</a></li>
+                <li><a href="/appointment">CREATE APPOINTMENT</a></li>
+				
+				{{/if}}
+
+            {{/if}}
+			
+			{{#if userName}}
+			{{#if isAdmin}}
+			{{else}}
+			<li><a href="/checkout/yourorders">YOUR ORDER</a></li>
+			<li><a href="/broadband/contactus">CONTACT US</a></li>
+			{{/if}}
+			{{else}}
+				<li><a href="/broadband/contactus">CONTACT US</a></li>
+		    {{/if}}
+			
+ 		</ul>	
+ 		</div>
+ 		<div id="interior2">
+        <ul> 
+        {{#if userName}}      
+		<li><a href="/users/profile">PROFILE</a></li>
+			<li><a href="/users/logout">LOGOUT</a></li>
+         {{else}}
+            <li><a href="/users/signup">REGISTER</a></li>
+			<li><a href="/users/login">LOGIN</a></li>
+        {{/if}}	
+        </ul>
+ 		</div>
+</div>
+
+<h1>Welcome to BroadBand Website!!!</h1>
+<div>
+	{{#if userName}}
+
+	{{#if appointmentdate}}
+    	
+    		{{#each appointmentdate}}
+				<p>Hey {{userName}} you have an appointment on {{date}}</p>
+			{{/each}}
+		
+	{{/if}}
+    
+
+{{/if}}
+</div>
+<img id="myimg" src="/public/img/server_room.jpg" alt="server room">
+		<br><br>
+		<div id="bDiv">
+		<div class="center">
+			<div class="temp">Customized Internet for Customers</div>
+			<br>
+			<div class="temp1">
+			Your Partners!</div>
+			<br>
+			<div class="temp2">SPECIAL FEATURES</div>
+		</div>
+		</div>
+		<br><br><br>
+		
+		<div class="box">
+			<h2>Instant Setup</h2><p>We Provide Connectivity Setup within a day</p>
+		</div>
+		
+		<div class="box">
+			<h2>Better Uptime</h2><p>Hassle free! We assure and provide 99.9% uptime.</p>
+		</div>
+		
+		<div class="box">
+			<h2>Reliable Speed</h2><p>Speed is most important factor, we deliver unmatchable speed.</p>
+		</div>

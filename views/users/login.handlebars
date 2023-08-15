@@ -1,0 +1,44 @@
+<div class="container">
+		<div class="div4">
+ 		<ul>
+ 			<li><a href="/">HOME</a></li>
+			 <li><a href="/broadband/broadbandPlans">PLANS</a></li>
+		    <li><a href="/broadband/contactus">CONTACT US</a></li>
+ 		</ul>	
+ 		</div>
+ 		<div class="div5"> 
+ 		<ul>	
+            <li><a href="/users/signup">REGISTER</a></li>
+			{{!-- <li><a href="/users/login">LOGIN</a></li> --}}
+ 		</ul>	
+ 		</div>
+</div>
+{{!-- <h2>Login Form</h2> --}}
+
+<div class="void">
+</div>
+<div class="form_center">
+{{#if error}}
+	<p>{{error}}</p>
+{{/if}}
+<form id="login-form" action="login" method="POST">
+    <h1>LOGIN</h1>
+	<div id="error" hidden></div>
+    <div class="inputs">
+	    <div class="group">
+            <input type="text" id="userName" name="userName">
+            <span class="bar"></span>
+	        <label for="userName">USERNAME</label>
+	    </div>
+        <div class="group">
+            <input type="password" id="password" name="password">
+            <span class="bar"></span>
+	        <label for="password">PASSWORD</label>
+	    </div>
+    </div>
+    <div>
+        <input id="reg" type="submit" value="Submit"> 
+    </div>
+</form>
+</div>
+<script src="/public/js/login.js"></script>

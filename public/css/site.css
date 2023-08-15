@@ -1,0 +1,446 @@
+#interior{
+    width:84%;
+    float:left;
+}
+
+#interior2{
+    width: 16%;
+    float:right;
+}
+
+#interior3{
+    width:100%;
+    float:left;
+}
+
+
+#bDiv{
+    width:100%;
+}
+
+.someDiv {
+    float : left;
+    width: 175px;
+}
+
+.outerDiv {
+    width: 84%;
+    float: left;
+}
+
+.innerDiv {
+    width: 16%;
+    float: right;
+}
+
+.div2 {
+    width: 100%;
+}
+
+.div3{
+    width: 6%;
+    float:right;
+}
+
+.div4{
+    width:92%;
+    float:left;
+}
+
+.div5{
+    width: 8%;
+    float:right;
+}
+
+.div6{
+    width:94%;
+    float:left;
+}
+
+body {
+    background-color: #212121;
+    font-family: 'Sansation_Regular';
+    color: white;
+}
+
+.void {
+    float: left;
+    width: 400px;
+}
+
+
+
+table {
+    margin-top: 50px;
+    float: left;
+    background-color: #263238;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
+    text-align: center;
+    padding: 50px;
+    margin-left: 250px;
+}
+
+.form_center
+    {
+        margin-top: 50px;
+        width: 30%;
+        margin-left: 390px;
+        background-color: #263238;
+        border-radius: 10px;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
+        text-align: center;
+        padding: 50px;
+        
+    }
+
+
+
+.inputs {
+    
+    padding: 5px;
+}
+
+input,
+textarea {
+    background-color: #263238;
+    
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+
+.group {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+label {
+    color: #f76687;
+    font-size: 14px;
+    font-weight: normal;
+    
+    left: 5px;
+    top: -10px;
+    transition: 0.2s ease all;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+
+input:focus~label,
+input:valid~label,
+textarea:focus~label,
+textarea:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #f76687;
+}
+
+label:checked+label,
+input:valid~label,
+textarea:checked+label,
+textarea:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #f76687;
+} 
+
+.bar {
+    position: relative;
+    display: block;
+    width: 300px;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    /*background: #E91E63;*/
+    background: #E80C5f;
+    transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+input:focus~.bar:before,
+input:focus~.bar:after,
+textarea:focus~.bar:before,
+textarea:focus~.bar:after {
+    width: 50%;
+}
+
+#reg {
+    height: 40px;
+    width: 120px;
+    border-radius: 15px;
+    background-color: #E80C5f;
+    border-bottom: 0px solid white;
+}
+
+
+.container {
+    width: 100%;
+    height: 200px;
+}
+
+
+ul li {
+    display: inline;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #E80C5f;
+}
+
+li {
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.1s, background-color 0.1s;
+}
+
+a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 1px;
+    color: white;
+    padding: 20px 20px;
+    font-family: 'roboto';
+    transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+}
+
+a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s, transform 0.2s ease-out;
+}
+
+a:active::before {
+    background-color: white;
+}
+
+a:hover::before,
+a:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+
+.container {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.box {
+    border: 2px solid white;
+    padding: 10px;
+    width: 200px;
+    float: left;
+    opacity: 0.6;
+    margin-right: 120px;
+    margin-left: 70px;
+}
+
+tr,
+th {
+    padding: 20px;
+}
+
+th {
+    font-size: 18;
+    font-weight: bolder;
+}
+
+.box:hover {
+    opacity: 1;
+}
+/*
+.voidx {
+    float: left;
+    width: 175px;
+}*/ 
+
+img {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+}
+
+img:hover {
+    opacity: 0.6;
+}
+
+.center {
+    text-align: center;
+}
+
+.temp {
+    font-weight: bold;
+    font-size: 50;
+}
+
+.temp1 {
+    margin-top: -25px;
+    font-size: 28;
+    font-family: 'Calibri';
+}
+
+.temp2 {
+    margin-top: -17px;
+    font-family: 'Times New Roman';
+}
+
+.row {
+    display: -ms-flexbox;
+
+    display: flex;
+    -ms-flex-wrap: wrap;
+  
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+
+.col-25 {
+    -ms-flex: 25%;
+  
+    flex: 25%;
+}
+
+.col-50 {
+    -ms-flex: 50%;
+  
+    flex: 50%;
+}
+
+.col-75 {
+    -ms-flex: 75%;
+   
+    flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+    padding: 0 16px;
+}
+
+.container-form {
+    background-color: #212121;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+
+
+ 
+input {
+    width: 40%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+label {
+    /*margin-bottom: 10px;*/
+    display: block;
+} 
+
+.icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+}
+
+.btn {
+    background-color: #E80C5f;
+    color: white;
+    padding: 12px;
+    border: none;
+    
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+.btn:hover {
+    background-color: #E80C5f;
+}
+
+.validity {
+    padding: 100%;
+}
+
+span.price {
+    float: right;
+    color: grey;
+}
+table, th, td {
+    border:1px solid black;
+  }
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) 
+
+
+/*
+@media (max-width: 800px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+    .col-25 {
+        margin-bottom: 20px;
+    }
+}*/
+
+.my_plan {
+    border: solid #E80C5f;
+}
+
+.statdiv1{
+    width:84%;
+    float:left;
+}
+
+.statdiv2{
+    width: 16%;
+    float:right;
+}

@@ -1,0 +1,48 @@
+<div class="container">
+		<div class="statdiv1">
+ 		<ul>
+ 			<li><a href="/">HOME</a></li>
+             <li><a href="/broadband/broadbandPlans">PLANS</a></li>
+			 {{#if userName}}
+			{{#if isAdmin}}
+			<li><a href="/allappointments">CHECK USER REQUESTS</a></li>
+			{{else}}
+			<li><a href="/checkout/yourorders">YOUR ORDER</a></li>
+			{{/if}}
+		    {{/if}}
+		    {{!-- <li><a href="/broadband/contactus">CONTACT US</a></li> --}}
+ 		</ul>	
+ 		</div>
+ 		<div class="statdiv2"> 
+        {{!-- {{#if userName}}
+            <h2 class="userType">{{userName}}</h2>
+        {{else}}
+        <h2 class="userType" hidden>guest</h2> --}}
+ 		<ul>	
+        {{#if userName}}      
+		    <li><a href="/users/profile">PROFILE</a></li>
+		    <li><a href="/users/logout">LOGOUT</a></li>
+        {{else}}
+            <li><a href="/users/signup">REGISTER</a></li>
+		    <li><a href="/users/login">LOGIN</a></li>
+        {{/if}}
+ 		</ul>
+         {{!-- {{/if}}	 --}}
+ 		</div>
+</div>
+
+<script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+
+<h1>Plan Statistics</h1>
+{{!-- {{#if plan}} --}}
+<h2 id="plan" hidden>{{plan}}</h2>
+{{!-- {{/if}}
+{{#if users}} --}}
+<h2 id="users" hidden>{{users}}</h2>
+{{!-- {{/if}} --}}
+{{#if error}}
+<p>{{error}}</p>
+{{/if}}
+<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+<script src="/public/js/statistics.js"></script>

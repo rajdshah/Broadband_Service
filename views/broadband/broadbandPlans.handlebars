@@ -1,0 +1,125 @@
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<div class="container">
+		<div id="interior">
+ 		<ul>
+ 			<li><a href="/">HOME</a></li>
+            <li><a href="/broadband/broadbandPlans">PLANS</a></li>
+
+             {{#if userName}}
+                
+            {{/if}}
+             {{!-- Don't think we need this link if we are already on that page --}}
+             
+             {{#if userName}}
+			{{#if isAdmin}}
+            {{!-- <li><a href="/broadband/newPlan">ADD NEW BROADBAND PLAN</a></li>	 --}}
+    		<li><a href="/allappointments">CHECK USER REQUESTS</a></li>
+			{{else}}
+             <li><a href="/users/referafriend">REFER A FRIEND</a></li>
+            <li><a href="/appointment">CREATE APPOINTMENT</a></li>
+			<li><a href="/checkout/yourorders">YOUR ORDER</a></li>           
+            <li><a href="/broadband/contactus">CONTACT US</a></li>
+			{{/if}}
+            {{else}}
+            <li><a href="/broadband/contactus">CONTACT US</a></li>
+		    {{/if}}
+		   
+ 		</ul>	
+ 		</div>
+ 		<div id="interior2"> 
+        {{!-- {{#if userName}}
+            <h2 class="userType">{{userName}}</h2>
+        {{else}}
+        <h2 class="userType" hidden>guest</h2> --}}
+ 		<ul>	
+        {{#if userName}}      
+		    <li><a href="/users/profile">PROFILE</a></li>
+		    <li><a href="/users/logout">LOGOUT</a></li>
+        {{else}}
+            <li><a href="/users/signup">REGISTER</a></li>
+		    <li><a href="/users/login">LOGIN</a></li>
+        {{/if}}
+ 		</ul>
+         {{!-- {{/if}}	 --}}
+ 		</div>
+</div>
+
+<a href="/broadband/statistics" target="_blank">Check Statistics</a>
+<h1 class="table_heading">Broadband Plans</h1>
+<div>
+    {{#if noPlan}}
+   
+            <p>{{noPlan}}</p>
+            
+        {{/if}}
+	<table id='plansTable'>
+        <tr>
+            <th>Plan Name</th>
+            <th>Cost</th>
+            <th>Validity</th>
+            <th>Limit</th>
+            <th>Discount</th>
+            <th>Statistics</th>
+            <th></th>
+            {{#if isAdmin}}
+            <th></th>
+            {{/if}}
+        </tr>
+ {{#if isAdmin}}
+        {{#each broadbandList}}
+        <tr>
+            <td><p id='planName'>{{this.planName}}</p></td>
+            <td><p id='price'>{{this.price}}</p></td>
+            <td><p id='validity'>{{this.validity}} Months</p></td>
+            <td><p id='limit'>{{this.limit}}</p></td>
+            <td><p id='discount'>{{this.discount}}%</p></td>
+            <td><p id='ststs'>{{this.userID.length}} Users</p></td>          
+            {{!-- <td colspan="3"><button id="reg" type="submit" class="select" >Subscribe</button></td> --}}
+            {{!-- {{#if isAdmin}} --}}
+           
+            
+         <form>
+            <td><button id="reg" type="submit" class="delete" formmethod="post" formaction="/broadband/scrap/{{this._id}}">Delete</button></td>
+            <td><button id="reg" type="submit" class="update" formmethod="post" formaction="/broadband/getByName/{{this._id}}" >Update</button></td>
+            {{!-- <a href="/broadband/getByName/{{this._id}}">Update</a> --}}
+         </form></tr>
+         {{/each}}
+         {{else}}
+         {{#each broadbandList}}
+        <tr>
+            <td><p id='planName'>{{this.planName}}</p></td>
+            <td><p id='price'>{{this.price}}</p></td>
+            <td><p id='validity'>{{this.validity}} Months</p></td>
+            <td><p id='limit'>{{this.limit}}</p></td>
+            <td><p id='discount'>{{this.discount}}%</p></td>
+            <td><p id='ststs'>{{this.userID.length}} Users</p></td>          
+            <td><button id="reg" type="submit" class="select" >Subscribe</button></td>
+        </tr>{{/each}}
+         {{/if}}
+        
+        
+        {{#if isAdmin}}
+        <tr>
+        <form>
+        <td colspan="8"><button id="reg" type="submit" class="add" formmethod="post" formaction="/broadband/newPlan" >Add New Plan</button></td>
+        </form>
+        </tr>
+        {{/if}}
+        {{#if error}}
+        <div>{{error}}</div>
+        {{/if}}
+        {{#if max}}
+        <tr><td colspan="7">
+        <div>Most subscribed plan</div><ol>
+        {{#each max}}
+        <li>{{this}}</li>
+        {{/each}}</ol></td>
+        </tr>
+        {{/if}}
+     </table>
+
+
+
+</div>
+<script src="/public/js/broadbandScript.js"></script>

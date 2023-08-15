@@ -1,0 +1,37 @@
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+
+<h1>My Plans</h1>
+<a href="/users/profile">Back to Profile</a>
+{{#if user}}
+    {{#if plans}}
+        <div class="my_plan">
+        <table id='plansTable'>
+        <tr>
+            <th>Plan Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Price</th>
+
+            <th></th>
+        </tr>
+        {{#each user.planSelected}}
+        <tr>
+            <td><p id='planName'>{{this.planName}}</p></td>
+            <td><p id='startDate'>{{this.startDate}}</p></td>
+            <td><p id='endDate'>{{this.endDate}}</p></td>
+            <td><p id='price'>{{this.price}}</p></td>
+            
+            <td><button id="reg" type="submit" class="select" >Remove Plan</button></td>
+         
+            
+        </tr>{{/each}}
+    </table>
+        </div>
+    
+    {{else}}
+        <p>No plans selected currently.</p>
+    {{/if}}
+{{/if}}
+
+<script src="/public/js/removePlan.js"></script>

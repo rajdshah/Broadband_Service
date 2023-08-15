@@ -1,0 +1,55 @@
+<div class="container">
+		<div id="interior">
+ 		<ul>
+ 			<li><a href="/">HOME</a></li>
+            <li><a href="/broadband/broadbandPlans">PLANS</a></li>
+
+             {{#if userName}}
+                
+            {{/if}}
+             {{!-- Don't think we need this link if we are already on that page --}}
+             {{#if userName}}
+			{{#if isAdmin}}
+			{{else}}
+            <li><a href="users/referafriend">REFER A FRIEND</a></li>
+            <li><a href="/appointment">CREATE APPOINTMENT</a></li>
+			<li><a href="/checkout/yourorders">YOUR ORDER</a></li>
+			{{/if}}
+		    {{/if}}
+		    <li><a href="/broadband/contactus">CONTACT US</a></li>
+ 		</ul>	
+ 		</div>
+ 		<div id="interior2"> 
+        {{!-- {{#if userName}}
+            <h2 class="userType">{{userName}}</h2>
+        {{else}}
+        <h2 class="userType" hidden>guest</h2> --}}
+ 		<ul>	
+        {{#if userName}}      
+		    <li><a href="/users/profile">PROFILE</a></li>
+		    <li><a href="/users/logout">LOGOUT</a></li>
+        {{else}}
+            <li><a href="/users/signup">REGISTER</a></li>
+		    <li><a href="/users/login">LOGIN</a></li>
+        {{/if}}
+ 		</ul>
+         {{!-- {{/if}}	 --}}
+ 		</div>
+</div>
+
+<div>
+<form action="/users/referafriend" method="POST">
+<h1>Refer Friends</h1>
+<h2>Your refer code: {{refercode}}</h2>
+<div class="inputs">
+        <div class="group">
+            <input type="email" id="email" name="email">
+            <span class="bar"></span>
+            <label for="email">Enter email to share code</label>
+        </div>
+</div>
+<div>
+    <input id="reg" type="submit" value="Submit"> 
+</div>
+</form>
+</div>

@@ -1,0 +1,75 @@
+<div class="container">
+		<div id="interior">
+ 		<ul>
+ 			<li><a href="/">HOME</a></li>
+            <li><a href="/broadband/broadbandPlans">PLANS</a></li> 
+            {{#if userName}}
+			{{#if isAdmin}}
+			{{else}}
+			<li><a href="/users/referafriend">REFER A FRIEND</a></li>
+            <li><a href="/appointment">CREATE APPOINTMENT</a></li>
+			<li><a href="/checkout/yourorders">YOUR ORDER</a></li>           
+            <li><a href="/broadband/contactus">CONTACT US</a></li>
+
+			{{/if}}
+		    {{/if}}
+ 		</ul>	
+ 		</div>
+ 		<div id="interior2">
+        <ul> 
+        {{#if userName}}      
+		<li><a href="/users/profile">PROFILE</a></li>
+			<li><a href="/users/logout">LOGOUT</a></li>
+         {{else}}
+            <li><a href="/users/signup">REGISTER</a></li>
+			<li><a href="/users/login">LOGIN</a></li>
+        {{/if}}	
+        </ul>
+ 		</div>
+</div>
+
+<div>
+<form action="appointment" method="POST">
+<h1>Create a new appointment</h1>
+{{#if error}}
+    <p>{{error}}</p>
+{{/if}}
+    <div class="inputs">
+        <div class="group">
+            <input type="text" id="userName" name="Username"  value="{{userName}}" readonly>
+            <span class="bar"></span>
+            <label for="userName">USERNAME</label>
+	    </div>
+        <div class="group">
+            <input type="email" name="email" id="email"  value="{{email}}">
+            <span class="bar"></span>
+            <label for="email">EmailId</label>
+	    </div>
+        <div class="group">
+            <input type="date" id="date" name="Date" >
+            <span class="bar"></span>
+            <label for="date">APPOINTMENT DATE</label>
+	    </div>
+        <div class="group">
+            <input type="text" id="queries" name="Querise" >
+            <span class="bar"></span>
+            <label for="queries">QUERIES</label>
+	    </div>
+        <div class="group">
+            <label>REQUEST TYPE</label>
+            <br>
+            <span class="bar">
+                <select name="RequestType">  
+                <option value="TechnicalIssue">Technical Issue</option>
+                <option value="NewAppointment">New Appointment</option>
+                <option value="Others">Others</option>
+                </select>
+            </span>
+        </div>
+        
+    </div>
+    <div>
+        <input id="reg" type="submit" value="Submit"> 
+    </div>
+</form>
+</div>
